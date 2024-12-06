@@ -1,0 +1,15 @@
+fetch('posts.json')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(post => {
+            displayPost(post.title, post.content);
+        });
+    });
+
+function displayPost(title, content) {
+    const blogPosts = document.getElementById('blogPosts');
+    const newPost = document.createElement('div');
+    newPost.className = 'post';
+    newPost.innerHTML = `<h2>${title}</h2><p>${content}</p>`;
+    blogPosts.appendChild(newPost);
+}
