@@ -1,0 +1,5 @@
+const posts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+function savePost(title, content) {
+    posts.push({ title, content });
+    localStorage.setItem('blogPosts', JSON.stringify(posts));
+}
